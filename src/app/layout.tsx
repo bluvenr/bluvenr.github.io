@@ -16,16 +16,52 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "bluvenr — Developer & Open Source Enthusiast",
+  title: {
+    default: "bluvenr — Developer & Open Source Enthusiast",
+    template: "%s | bluvenr",
+  },
   description:
     "Personal homepage of bluvenr. Building developer tools with Rust, Go & TypeScript. Creator of TokenOwl, HookRun and VirAPI.",
+  keywords: [
+    "bluvenr",
+    "developer tools",
+    "Rust",
+    "Go",
+    "TypeScript",
+    "open source",
+    "TokenOwl",
+    "HookRun",
+    "VirAPI",
+    "full-stack developer",
+    "Shenzhen",
+  ],
+  authors: [{ name: "bluvenr", url: "https://github.com/bluvenr" }],
+  creator: "bluvenr",
+  metadataBase: new URL("https://bluvenr.github.io"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
-    title: "bluvenr",
-    description: "Developer & Open Source Enthusiast",
+    title: "bluvenr — Developer & Open Source Enthusiast",
+    description:
+      "Building developer tools with Rust, Go & TypeScript. Creator of TokenOwl, HookRun and VirAPI.",
     url: "https://bluvenr.github.io",
     siteName: "bluvenr",
     locale: "en_US",
     type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "bluvenr",
+    description: "Developer & Open Source Enthusiast",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 };
 

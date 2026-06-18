@@ -3,19 +3,26 @@
 import { motion } from "motion/react";
 import { useI18n } from "@/context/i18n-provider";
 
-// Official SVG icons from Simple Icons (https://simpleicons.org/)
 import {
   siRust,
   siGo,
   siTypescript,
   siJavascript,
+  siPhp,
+  siPython,
+  siOpenjdk,
   siReact,
   siNextdotjs,
   siVuedotjs,
   siTailwindcss,
+  siFlutter,
+  siWechat,
   siNodedotjs,
   siTauri,
   siSqlite,
+  siMysql,
+  siRedis,
+  siMongodb,
   siDocker,
 } from "simple-icons";
 
@@ -24,42 +31,45 @@ const techIcons: Record<string, { path: string; color: string }> = {
   Go: { color: "#" + siGo.hex, path: siGo.path },
   TypeScript: { color: "#" + siTypescript.hex, path: siTypescript.path },
   JavaScript: { color: "#" + siJavascript.hex, path: siJavascript.path },
+  PHP: { color: "#" + siPhp.hex, path: siPhp.path },
+  Python: { color: "#" + siPython.hex, path: siPython.path },
+  Java: { color: "#E76F00", path: siOpenjdk.path },
   React: { color: "#" + siReact.hex, path: siReact.path },
   "Next.js": { color: "#FFFFFF", path: siNextdotjs.path },
   Vue: { color: "#" + siVuedotjs.hex, path: siVuedotjs.path },
   TailwindCSS: { color: "#" + siTailwindcss.hex, path: siTailwindcss.path },
+  Flutter: { color: "#" + siFlutter.hex, path: siFlutter.path },
+  "Mini Program": { color: "#" + siWechat.hex, path: siWechat.path },
   "Node.js": { color: "#" + siNodedotjs.hex, path: siNodedotjs.path },
   Tauri: { color: "#" + siTauri.hex, path: siTauri.path },
   SQLite: { color: "#0F80B5", path: siSqlite.path },
+  MySQL: { color: "#" + siMysql.hex, path: siMysql.path },
+  Redis: { color: "#" + siRedis.hex, path: siRedis.path },
+  MongoDB: { color: "#" + siMongodb.hex, path: siMongodb.path },
   Docker: { color: "#" + siDocker.hex, path: siDocker.path },
 };
 
-const techStack = [
+type CategoryKey = "languages" | "frontend" | "backend";
+
+const categories: { key: CategoryKey; items: string[] }[] = [
   {
-    category: { en: "Languages", zh: "语言" },
-    items: [
-      { name: "Rust" },
-      { name: "Go" },
-      { name: "TypeScript" },
-      { name: "JavaScript" },
-    ],
+    key: "languages",
+    items: ["Rust", "Go", "TypeScript", "JavaScript", "PHP", "Python", "Java"],
   },
   {
-    category: { en: "Frontend", zh: "前端" },
-    items: [
-      { name: "React" },
-      { name: "Next.js" },
-      { name: "Vue" },
-      { name: "TailwindCSS" },
-    ],
+    key: "frontend",
+    items: ["React", "Next.js", "Vue", "TailwindCSS", "Flutter", "Mini Program"],
   },
   {
-    category: { en: "Backend & Tools", zh: "后端与工具" },
+    key: "backend",
     items: [
-      { name: "Node.js" },
-      { name: "Tauri" },
-      { name: "SQLite" },
-      { name: "Docker" },
+      "Node.js",
+      "Tauri",
+      "MySQL",
+      "SQLite",
+      "Redis",
+      "MongoDB",
+      "Docker",
     ],
   },
 ];
@@ -70,7 +80,7 @@ function TechIcon({ name }: { name: string }) {
   return (
     <svg
       viewBox="0 0 24 24"
-      className="h-5 w-5 shrink-0"
+      className="h-4 w-4 shrink-0"
       style={{ color: icon.color }}
       fill="currentColor"
     >
@@ -80,16 +90,23 @@ function TechIcon({ name }: { name: string }) {
 }
 
 export function TechStack() {
-  const { t, locale } = useI18n();
+  const { t } = useI18n();
+
+  const categoryLabels = t.stack.tabs as Record<CategoryKey, string>;
+  const techNames = (t.stack.techNames || {}) as Record<string, string>;
+  const displayName = (key: string) => techNames[key] || key;
 
   return (
-    <section id="stack" className="relative py-32">
-      {/* Subtle divider line */}
-      <div className="mx-auto max-w-[1200px] px-6">
-        <div className="mb-20 h-px bg-gradient-to-r from-transparent via-border-subtle to-transparent" />
+    <section id="stack" className="relative py-24 lg:py-32">
+      {/* Terminal section divider */}
+      <div className="mx-auto max-w-[1200px] px-6 mb-16">
+        <div className="section-divider">
+          <span className="text-accent/30">[stack]</span>
+        </div>
       </div>
 
       <div className="mx-auto max-w-[1200px] px-6">
+        {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -105,32 +122,38 @@ export function TechStack() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-          {techStack.map((group, groupIndex) => (
-            <motion.div
-              key={group.category.en}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: groupIndex * 0.1 }}
-            >
-              <h3 className="mb-5 font-mono text-xs uppercase tracking-widest text-zinc-500">
-                {locale === "zh" ? group.category.zh : group.category.en}
-              </h3>
-              <div className="grid grid-cols-2 gap-3">
-                {group.items.map((item) => (
+        {/* Tech items */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="space-y-10"
+        >
+          {categories.map((cat) => (
+            <div key={cat.key}>
+              <div className="mb-4">
+                <span className="font-mono text-[11px] text-zinc-600">
+                  <span className="text-accent/40 mr-1.5">●</span>
+                  {categoryLabels[cat.key]}
+                </span>
+              </div>
+              <div className="flex flex-wrap gap-x-6 gap-y-4">
+                {cat.items.map((name) => (
                   <div
-                    key={item.name}
-                    className="group flex items-center gap-3 rounded-lg border border-border-subtle bg-surface px-4 py-3 transition-colors hover:border-zinc-700"
+                    key={name}
+                    className="group/tech flex items-center gap-2.5 cursor-default"
                   >
-                    <TechIcon name={item.name} />
-                    <span className="text-sm text-zinc-300">{item.name}</span>
+                    <TechIcon name={name} />
+                    <span className="text-sm text-zinc-500 transition-colors duration-150 group-hover/tech:text-zinc-200">
+                      {displayName(name)}
+                    </span>
                   </div>
                 ))}
               </div>
-            </motion.div>
+            </div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

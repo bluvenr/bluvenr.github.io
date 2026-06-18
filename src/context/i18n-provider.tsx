@@ -3,6 +3,11 @@
 import { createContext, useContext, useEffect, useState, ReactNode } from "react";
 import { dict, Locale, Dict, getDict } from "@/lib/i18n";
 
+const TITLES: Record<Locale, string> = {
+  en: "bluvenr — Developer & Open Source Enthusiast",
+  zh: "bluvenr — 开发者 & 开源爱好者",
+};
+
 type I18nContextType = {
   locale: Locale;
   t: Dict;
@@ -32,6 +37,7 @@ export function I18nProvider({ children }: { children: ReactNode }) {
 
   useEffect(() => {
     document.documentElement.lang = locale;
+    document.title = TITLES[locale];
   }, [locale]);
 
   const toggleLocale = () => {
