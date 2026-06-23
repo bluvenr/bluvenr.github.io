@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import { I18nProvider } from "@/context/i18n-provider";
 
@@ -77,6 +78,21 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <I18nProvider>{children}</I18nProvider>
+        <Script
+          id="baidu-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              var _hmt = _hmt || [];
+              (function() {
+                var hm = document.createElement("script");
+                hm.src = "https://hm.baidu.com/hm.js?6f1156cfb852da98a090132b2829f22a";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+              })();
+            `,
+          }}
+        />
       </body>
     </html>
   );
