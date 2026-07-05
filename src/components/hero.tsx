@@ -243,6 +243,11 @@ export function Hero() {
               transition={{ duration: 0.4 }}
               className="mb-5 flex items-center gap-2 font-mono text-xs text-zinc-500"
             >
+              <img
+                src="https://github.com/bluvenr.png"
+                alt="bluvenr"
+                className="h-6 w-6 rounded-full ring-1 ring-accent/30"
+              />
               <Terminal size={14} weight="bold" className="text-accent" />
               <span className="text-accent/70">{t.hero.greeting}</span>
             </motion.div>

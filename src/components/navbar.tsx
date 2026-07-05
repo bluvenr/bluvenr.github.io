@@ -40,13 +40,8 @@ export function Navbar() {
       >
         <a
           href="#"
-          className="flex items-center gap-2 font-mono text-sm font-semibold tracking-tight text-accent"
+          className="font-mono text-sm font-semibold tracking-tight text-accent"
         >
-          <img
-            src="https://github.com/bluvenr.png"
-            alt="bluvenr"
-            className="h-7 w-7 rounded-full ring-1 ring-accent/30"
-          />
           ~/bluvenr
         </a>
 
