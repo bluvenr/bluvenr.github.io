@@ -11,7 +11,7 @@ function LogLine({ prefix, text, delay }: { prefix: string; text: string; delay:
       : prefix === "[PHILOSOPHY]"
       ? "text-blue-400/70"
       : prefix === "[VIBE]"
-      ? "text-purple-400/70"
+      ? "text-purple-400"
       : "text-yellow-500/70";
 
   return (
@@ -44,7 +44,7 @@ export function About() {
   };
 
   return (
-    <section id="about" className="relative py-24 lg:py-32">
+    <section id="about" className="relative py-20 lg:py-24">
       {/* Terminal section divider */}
       <div className="mx-auto max-w-[1200px] px-6 mb-16">
         <div className="section-divider">
@@ -88,9 +88,13 @@ export function About() {
           >
             <div className="rounded-lg border border-border-subtle bg-surface overflow-hidden">
               {/* File tab */}
-              <div className="flex items-center gap-1.5 border-b border-border-subtle px-4 py-2.5">
-                <div className="h-2 w-2 rounded-full bg-zinc-700" />
-                <span className="font-mono text-[10px] text-zinc-500 ml-1">
+              <div className="flex items-center gap-2 border-b border-border-subtle px-4 py-2.5">
+                <img
+                  src="https://github.com/bluvenr.png"
+                  alt="bluvenr"
+                  className="h-5 w-5 rounded-full ring-1 ring-accent/20"
+                />
+                <span className="font-mono text-[10px] text-zinc-500">
                   {config.title}
                 </span>
               </div>
@@ -102,17 +106,17 @@ export function About() {
                 </div>
                 <div>
                   <span className="text-blue-400">name</span>
-                  <span className="text-zinc-500"> = </span>
+                  <span className="text-zinc-400"> = </span>
                   <span className="text-accent/80">&quot;{config.name}&quot;</span>
                 </div>
                 <div>
                   <span className="text-blue-400">location</span>
-                  <span className="text-zinc-500"> = </span>
+                  <span className="text-zinc-400"> = </span>
                   <span className="text-accent/80">&quot;{config.location}&quot;</span>
                 </div>
                 <div>
                   <span className="text-blue-400">focus</span>
-                  <span className="text-zinc-500"> = </span>
+                  <span className="text-zinc-400"> = </span>
                   <span className="text-accent/80">&quot;{config.focus}&quot;</span>
                 </div>
 
@@ -123,16 +127,16 @@ export function About() {
                 </div>
                 <div>
                   <span className="text-blue-400">languages</span>
-                  <span className="text-zinc-500"> = [</span>
+                  <span className="text-zinc-400"> = [</span>
                   {config.languages.map((lang, i) => (
                     <span key={lang}>
                       <span className="text-accent/80">&quot;{lang}&quot;</span>
                       {i < config.languages.length - 1 && (
-                        <span className="text-zinc-600">, </span>
+                        <span className="text-zinc-500">, </span>
                       )}
                     </span>
                   ))}
-                  <span className="text-zinc-500">]</span>
+                  <span className="text-zinc-400">]</span>
                 </div>
 
                 <div className="my-3 h-px bg-border-subtle" />
@@ -142,7 +146,7 @@ export function About() {
                 </div>
                 <div>
                   <span className="text-blue-400">currently</span>
-                  <span className="text-zinc-500"> = </span>
+                  <span className="text-zinc-400"> = </span>
                   <span className="text-accent/80">&quot;{config.currently}&quot;</span>
                   <span className="inline-block w-[2px] h-[11px] bg-accent ml-1 align-middle cursor-blink" />
                 </div>

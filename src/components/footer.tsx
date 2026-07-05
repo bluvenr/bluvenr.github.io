@@ -6,10 +6,10 @@ export function Footer() {
   const { t } = useI18n();
 
   return (
-    <footer className="relative border-t border-border-subtle pt-16 pb-10">
+    <footer className="relative border-t border-border-subtle pt-10 pb-8">
       <div className="mx-auto max-w-[1200px] px-6">
         {/* Terminal exit sequence */}
-        <div className="mb-12 font-mono text-xs text-zinc-600 space-y-1 select-none">
+        <div className="mb-8 font-mono text-xs text-zinc-600 space-y-1 select-none">
           <div>
             <span className="text-accent/60">{t.footer.exit}</span>
           </div>

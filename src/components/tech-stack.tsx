@@ -97,7 +97,7 @@ export function TechStack() {
   const displayName = (key: string) => techNames[key] || key;
 
   return (
-    <section id="stack" className="relative py-24 lg:py-32">
+    <section id="stack" className="relative py-20 lg:py-24">
       {/* Terminal section divider */}
       <div className="mx-auto max-w-[1200px] px-6 mb-16">
         <div className="section-divider">
@@ -132,9 +132,9 @@ export function TechStack() {
         >
           {categories.map((cat) => (
             <div key={cat.key}>
-              <div className="mb-4">
-                <span className="font-mono text-[11px] text-zinc-600">
-                  <span className="text-accent/40 mr-1.5">●</span>
+              <div className="mb-4 pb-2 border-b border-border-subtle">
+                <span className="font-mono text-xs font-medium text-zinc-400 tracking-wide">
+                  <span className="text-accent/50 mr-1.5">●</span>
                   {categoryLabels[cat.key]}
                 </span>
               </div>

@@ -193,7 +193,7 @@ function MatrixRain() {
       />
       {/* Bottom fade-out gradient */}
       <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-72 sm:h-80"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-48 sm:h-56"
         style={{
           background: "linear-gradient(to bottom, transparent 20%, #09090b)",
         }}
@@ -306,20 +306,20 @@ export function Hero() {
               className="flex flex-wrap items-center gap-4"
             >
               <a
-                href="https://github.com/bluvenr"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex items-center gap-2 rounded-md border border-accent/30 bg-accent/10 px-5 py-2.5 text-sm font-medium text-accent transition-all hover:bg-accent/20 hover:border-accent/50 hover:shadow-lg hover:shadow-accent/5 active:scale-[0.98]"
-              >
-                <GithubLogo size={16} weight="fill" />
-                {t.hero.ctaGithub}
-              </a>
-              <a
                 href="#projects"
-                className="group flex items-center gap-2 rounded-md px-5 py-2.5 text-sm font-medium text-zinc-400 transition-all hover:text-zinc-200 active:scale-[0.98]"
+                className="group flex items-center gap-2 rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-zinc-950 transition-all hover:bg-accent/90 hover:shadow-lg hover:shadow-accent/10 active:scale-[0.98]"
               >
                 {t.hero.ctaProjects}
                 <ArrowRight size={14} weight="bold" className="transition-transform group-hover:translate-x-1" />
+              </a>
+              <a
+                href="https://github.com/bluvenr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 rounded-md border border-zinc-700 px-5 py-2.5 text-sm font-medium text-zinc-400 transition-all hover:text-zinc-200 hover:border-zinc-500 active:scale-[0.98]"
+              >
+                <GithubLogo size={16} weight="fill" />
+                {t.hero.ctaGithub}
               </a>
             </motion.div>
           </div>

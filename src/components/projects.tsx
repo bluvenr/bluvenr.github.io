@@ -3,7 +3,6 @@
 import { useRef } from "react";
 import { motion } from "motion/react";
 import {
-  ArrowUpRight,
   GithubLogo,
   Globe,
   Lightning,
@@ -159,20 +158,11 @@ function ProjectCard({
             >
               <GithubLogo size={15} weight="fill" />
             </a>
-            <a
-              href={project.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex h-8 w-8 items-center justify-center rounded-md text-zinc-500 transition-all hover:bg-surface-raised hover:text-zinc-300"
-              aria-label="Open"
-            >
-              <ArrowUpRight size={15} weight="bold" />
-            </a>
           </div>
         </div>
 
         {/* Description */}
-        <p className={`mb-5 text-sm leading-relaxed text-zinc-400 ${isFeatured ? "max-w-md" : ""}`}>
+        <p className={`mb-5 text-sm leading-relaxed text-zinc-400 ${isFeatured ? "max-w-md" : "max-w-sm"}`}>
           {projData.desc}
         </p>
 
@@ -215,7 +205,7 @@ export function Projects() {
   const { t } = useI18n();
 
   return (
-    <section id="projects" className="relative py-24 lg:py-32">
+    <section id="projects" className="relative py-20 lg:py-24">
       {/* Terminal section divider */}
       <div className="mx-auto max-w-[1200px] px-6 mb-16">
         <div className="section-divider">
