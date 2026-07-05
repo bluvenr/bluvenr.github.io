@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "https://github.com/bluvenr.png",
+  },
   title: {
     default: "bluvenr — Developer & Open Source Enthusiast",
     template: "%s | bluvenr",
