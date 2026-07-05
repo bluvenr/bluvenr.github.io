@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { GithubLogo, Translate, List, X } from "@phosphor-icons/react";
+import { GithubLogo, XLogo, Translate, List, X } from "@phosphor-icons/react";
 import { useI18n } from "@/context/i18n-provider";
 
 export function Navbar() {
@@ -81,6 +81,15 @@ export function Navbar() {
             <span>{locale === "zh" ? "EN" : "中"}</span>
           </button>
 
+          <a
+            href="https://x.com/bluvenr"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center rounded-md p-1.5 text-zinc-400 transition-colors hover:bg-surface-raised hover:text-zinc-200"
+            aria-label="X"
+          >
+            <XLogo size={15} weight="fill" />
+          </a>
           <a
             href="https://github.com/bluvenr"
             target="_blank"

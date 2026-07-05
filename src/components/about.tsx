@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { GithubLogo, Globe, Envelope } from "@phosphor-icons/react";
+import { GithubLogo, XLogo, Globe, Envelope } from "@phosphor-icons/react";
 import { useI18n } from "@/context/i18n-provider";
 
 function LogLine({ prefix, text, delay }: { prefix: string; text: string; delay: number }) {
@@ -160,6 +160,18 @@ export function About() {
                   <GithubLogo size={15} weight="fill" />
                   <span className="pointer-events-none absolute bottom-full left-1/2 mb-2 -translate-x-1/2 whitespace-nowrap rounded bg-zinc-800 px-2 py-1 text-[9px] text-zinc-300 opacity-0 transition-opacity group-hover/link:opacity-100 border border-zinc-700">
                     github.com/bluvenr
+                  </span>
+                </a>
+                <a
+                  href="https://x.com/bluvenr"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group/link relative flex h-8 w-8 items-center justify-center rounded-md border border-border-subtle text-zinc-400 transition-all hover:bg-surface-raised hover:text-zinc-200 hover:border-zinc-600"
+                  aria-label="X"
+                >
+                  <XLogo size={15} weight="fill" />
+                  <span className="pointer-events-none absolute bottom-full left-1/2 mb-2 -translate-x-1/2 whitespace-nowrap rounded bg-zinc-800 px-2 py-1 text-[9px] text-zinc-300 opacity-0 transition-opacity group-hover/link:opacity-100 border border-zinc-700">
+                    x.com/bluvenr
                   </span>
                 </a>
                 <a
