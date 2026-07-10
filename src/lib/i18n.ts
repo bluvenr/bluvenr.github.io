@@ -14,6 +14,7 @@ export const dict = {
       typing: [
         "编译 TokenOwl 中... ████████░░ 82%",
         "发布 HookRun v0.4 --release",
+        "打包 A7Box ... 18 tools ready",
         "用 Rust 重构核心模块...",
         "零依赖，单二进制，开箱即用",
         "cargo test --all ... 23 passed, 0 failed",
@@ -28,6 +29,7 @@ export const dict = {
         "$ cargo build --release",
         "   Compiling tokenowl v2.1.0",
         "   Compiling hookrun v0.4.0",
+        "   Compiling a7box v1.0.0",
         "    Finished `release` [optimized]",
         "",
         "$ hookrun version",
@@ -40,6 +42,7 @@ export const dict = {
       mobileSession: [
         "$ cargo build --release",
         "   Compiling tokenowl v2.1.0",
+        "   Compiling a7box v1.0.0",
         "    Finished `release` [optimized]",
       ],
     },
@@ -55,12 +58,16 @@ export const dict = {
         name: "HookRun",
         desc: "Webhook 到了之后该做什么？一条 YAML 规则搞定。执行脚本、转发请求、触发命令——单文件二进制，丢进服务器就跑。",
         tags: ["Go", "YAML", "CLI"],
-        codePreview: 'name: "auto-deploy"\nrules:\n  - name: "deploy-main"\n    filters:\n      - type: "body"\n        key: "ref"\n        operator: "eq"\n        value: "refs/heads/main"\n    actions:\n      - type: "command"\n        cmd: "git pull && make deploy"',
       },
       virapi: {
         name: "VirAPI",
         desc: "前端联调还在等后端？VirAPI 给你一个零搭建的 Mock 接口，支持 MockJs 语法，浏览器里就能拿到任意格式的响应数据。",
         tags: ["TypeScript", "Vue", "Node.js"],
+      },
+      a7box: {
+        name: "A7Box",
+        desc: "一个 100% 本地的跨平台开发者工具箱——18 个内置工具：截图、JSON 格式化、二维码、图片压缩、取色器等。~10MB，无云端依赖。",
+        tags: ["Tauri v2", "React 19", "Rust"],
       },
     },
     stack: {
@@ -110,7 +117,7 @@ export const dict = {
         location: "深圳, 中国",
         focus: "开发者工具",
         languages: ["Rust", "Go", "TypeScript"],
-        currently: "迭代 TokenOwl v2 + HookRun",
+        currently: "迭代 HookRun + A7Box + TokenOwl",
       },
     },
     footer: {
@@ -133,6 +140,7 @@ export const dict = {
       typing: [
         "Compiling TokenOwl... ████████░░ 82%",
         "Shipping HookRun v0.4 --release",
+        "Bundling A7Box ... 18 tools ready",
         "Refactoring core module in Rust...",
         "Zero deps. Single binary. Ship it.",
         "cargo test --all ... 23 passed, 0 failed",
@@ -147,6 +155,7 @@ export const dict = {
         "$ cargo build --release",
         "   Compiling tokenowl v2.1.0",
         "   Compiling hookrun v0.4.0",
+        "   Compiling a7box v1.0.0",
         "    Finished `release` [optimized]",
         "",
         "$ hookrun version",
@@ -159,6 +168,7 @@ export const dict = {
       mobileSession: [
         "$ cargo build --release",
         "   Compiling tokenowl v2.1.0",
+        "   Compiling a7box v1.0.0",
         "    Finished `release` [optimized]",
       ],
     },
@@ -174,12 +184,16 @@ export const dict = {
         name: "HookRun",
         desc: "Webhook arrives — now what? One YAML rule to execute scripts, forward requests, or trigger commands. Single binary, drop it on your server and go.",
         tags: ["Go", "YAML", "CLI"],
-        codePreview: 'name: "auto-deploy"\nrules:\n  - name: "deploy-main"\n    filters:\n      - type: "body"\n        key: "ref"\n        operator: "eq"\n        value: "refs/heads/main"\n    actions:\n      - type: "command"\n        cmd: "git pull && make deploy"',
       },
       virapi: {
         name: "VirAPI",
         desc: "Waiting on backend for frontend dev? VirAPI gives you zero-setup mock endpoints with MockJs syntax — get any response format right in the browser.",
         tags: ["TypeScript", "Vue", "Node.js"],
+      },
+      a7box: {
+        name: "A7Box",
+        desc: "A 100% local, cross-platform developer toolbox — 18 built-in tools including screenshot, JSON formatter, QR code, image compression, color picker and more. ~10MB, no cloud.",
+        tags: ["Tauri v2", "React 19", "Rust"],
       },
     },
     stack: {
@@ -227,7 +241,7 @@ export const dict = {
         location: "Shenzhen, China",
         focus: "Developer tools",
         languages: ["Rust", "Go", "TypeScript"],
-        currently: "Iterating TokenOwl v2 + HookRun",
+        currently: "Iterating HookRun + A7Box + TokenOwl",
       },
     },
     footer: {

@@ -8,6 +8,7 @@ import {
   Lightning,
   Code,
   Database,
+  Toolbox,
 } from "@phosphor-icons/react";
 import { useI18n } from "@/context/i18n-provider";
 
@@ -18,9 +19,17 @@ const projects = [
     website: "https://hookrun.virapi.com",
     github: "https://github.com/bluvenr/hookrun",
     lang: "Go",
-    langColor: "#00ADD8",
+    langColor: "#34d399",
     icon: Lightning,
-    featured: true,
+  },
+  {
+    key: "a7box" as const,
+    repo: "bluvenr/a7box",
+    website: "https://a7box.virapi.com",
+    github: "https://github.com/bluvenr/a7box",
+    lang: "Rust",
+    langColor: "#FF4D4F",
+    icon: Toolbox,
   },
   {
     key: "tokenowl" as const,
@@ -30,7 +39,6 @@ const projects = [
     lang: "Rust",
     langColor: "#dea584",
     icon: Code,
-    featured: false,
   },
   {
     key: "virapi" as const,
@@ -38,9 +46,8 @@ const projects = [
     website: "https://virapi.com",
     github: "https://github.com/bluvenr/open_virapi",
     lang: "TypeScript",
-    langColor: "#3178c6",
+    langColor: "#2570ff",
     icon: Database,
-    featured: false,
   },
 ];
 
@@ -63,12 +70,11 @@ function ProjectCard({
   index,
 }: {
   project: (typeof projects)[0];
-  projData: { name: string; desc: string; tags: readonly string[]; codePreview?: string };
+  projData: { name: string; desc: string; tags: readonly string[] };
   index: number;
 }) {
   const cardRef = useRef<HTMLDivElement>(null);
   const Icon = project.icon;
-  const isFeatured = index === 0;
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
@@ -85,9 +91,7 @@ function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className={`group relative flex flex-col rounded-lg border border-border-subtle bg-surface transition-all duration-300 hover:border-zinc-700 overflow-hidden ${
-        isFeatured ? "md:col-span-7 md:row-span-2" : "md:col-span-5"
-      }`}
+      className="group relative flex flex-col rounded-lg border border-border-subtle bg-surface transition-all duration-300 hover:border-zinc-700 overflow-hidden md:col-span-6"
     >
       {/* Left accent bar */}
       <div
@@ -162,22 +166,9 @@ function ProjectCard({
         </div>
 
         {/* Description */}
-        <p className={`mb-5 text-sm leading-relaxed text-zinc-400 ${isFeatured ? "max-w-md" : "max-w-sm"}`}>
+        <p className="mb-5 text-sm leading-relaxed text-zinc-400">
           {projData.desc}
         </p>
-
-        {/* Code preview for featured project */}
-        {isFeatured && projData.codePreview && (
-          <div className="mb-5 rounded-md border border-border-subtle bg-[#0a0a0c] overflow-hidden">
-            <div className="flex items-center gap-1.5 px-3 py-1.5 border-b border-border-subtle">
-              <div className="h-1.5 w-1.5 rounded-full bg-zinc-700" />
-              <span className="font-mono text-[9px] text-zinc-600 ml-1">rules.yaml</span>
-            </div>
-            <pre className="px-3 py-2.5 font-mono text-[10px] leading-relaxed text-zinc-500 overflow-x-auto">
-              {projData.codePreview}
-            </pre>
-          </div>
-        )}
 
         {/* Tags */}
         <div className="mt-auto flex flex-wrap gap-2">
@@ -231,14 +222,14 @@ export function Projects() {
         </motion.div>
 
         {/* Bento grid */}
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-12 md:grid-rows-2">
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-12">
           {projects.map((project, i) => {
             const projData = t.projects[project.key];
             return (
               <ProjectCard
                 key={project.repo}
                 project={project}
-                projData={projData as { name: string; desc: string; tags: readonly string[]; codePreview?: string }}
+                projData={projData as { name: string; desc: string; tags: readonly string[] }}
                 index={i}
               />
             );
