@@ -9,6 +9,7 @@ import {
   Code,
   Database,
   Toolbox,
+  Path,
 } from "@phosphor-icons/react";
 import { useI18n } from "@/context/i18n-provider";
 
@@ -30,6 +31,15 @@ const projects = [
     lang: "Rust",
     langColor: "#FF4D4F",
     icon: Toolbox,
+  },
+  {
+    key: "routeman" as const,
+    repo: "bluvenr/routeman",
+    website: "https://routeman.virapi.com",
+    github: "https://github.com/bluvenr/routeman",
+    lang: "Rust",
+    langColor: "#00e5c7",
+    icon: Path,
   },
   {
     key: "tokenowl" as const,
@@ -91,7 +101,9 @@ function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="group relative flex flex-col rounded-lg border border-border-subtle bg-surface transition-all duration-300 hover:border-zinc-700 overflow-hidden md:col-span-6"
+      className={`group relative flex flex-col rounded-lg border border-border-subtle bg-surface transition-all duration-300 hover:border-zinc-700 overflow-hidden ${
+        index < 2 ? "md:col-span-6" : "md:col-span-4"
+      }`}
     >
       {/* Left accent bar */}
       <div

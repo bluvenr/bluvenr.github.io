@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     template: "%s | bluvenr",
   },
   description:
-    "Personal homepage of bluvenr. Building developer tools with Rust, Go & TypeScript. Creator of HookRun, A7Box, TokenOwl and VirAPI.",
+    "Personal homepage of bluvenr. Building developer tools with Rust, Go & TypeScript. Creator of HookRun, A7Box, RouteMan, TokenOwl and VirAPI.",
   keywords: [
     "bluvenr",
     "developer tools",
@@ -35,6 +35,7 @@ export const metadata: Metadata = {
     "open source",
     "HookRun",
     "A7Box",
+    "RouteMan",
     "TokenOwl",
     "VirAPI",
     "full-stack developer",
@@ -49,7 +50,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "bluvenr — Developer & Open Source Enthusiast",
     description:
-      "Building developer tools with Rust, Go & TypeScript. Creator of HookRun, A7Box, TokenOwl and VirAPI.",
+      "Building developer tools with Rust, Go & TypeScript. Creator of HookRun, A7Box, RouteMan, TokenOwl and VirAPI.",
     url: "https://bluvenr.github.io",
     siteName: "bluvenr",
     locale: "en_US",

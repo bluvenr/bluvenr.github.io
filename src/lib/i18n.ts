@@ -15,6 +15,7 @@ export const dict = {
         "编译 TokenOwl 中... ████████░░ 82%",
         "发布 HookRun v0.4 --release",
         "打包 A7Box ... 18 tools ready",
+        "拦截 RouteMan 请求 ... 200 OK",
         "用 Rust 重构核心模块...",
         "零依赖，单二进制，开箱即用",
         "cargo test --all ... 23 passed, 0 failed",
@@ -29,6 +30,7 @@ export const dict = {
         "$ cargo build --release",
         "   Compiling tokenowl v2.1.0",
         "   Compiling hookrun v0.4.0",
+        "   Compiling routeman v0.1.0",
         "   Compiling a7box v1.0.0",
         "    Finished `release` [optimized]",
         "",
@@ -42,6 +44,7 @@ export const dict = {
       mobileSession: [
         "$ cargo build --release",
         "   Compiling tokenowl v2.1.0",
+        "   Compiling routeman v0.1.0",
         "   Compiling a7box v1.0.0",
         "    Finished `release` [optimized]",
       ],
@@ -68,6 +71,11 @@ export const dict = {
         name: "A7Box",
         desc: "一个 100% 本地的跨平台开发者工具箱——18 个内置工具：截图、JSON 格式化、二维码、图片压缩、取色器等。~10MB，无云端依赖。",
         tags: ["Tauri v2", "React 19", "Rust"],
+      },
+      routeman: {
+        name: "RouteMan",
+        desc: "轻量级桌面 HTTP/HTTPS/WebSocket 代理工具——拦截、修改、Mock、路由请求，可视化规则管理，开发者抓包调试利器。",
+        tags: ["Rust", "Tauri v2", "React 19"],
       },
     },
     stack: {
@@ -117,7 +125,7 @@ export const dict = {
         location: "深圳, 中国",
         focus: "开发者工具",
         languages: ["Rust", "Go", "TypeScript"],
-        currently: "迭代 HookRun + A7Box + TokenOwl",
+        currently: "迭代 HookRun + A7Box + RouteMan",
       },
     },
     footer: {
@@ -141,6 +149,7 @@ export const dict = {
         "Compiling TokenOwl... ████████░░ 82%",
         "Shipping HookRun v0.4 --release",
         "Bundling A7Box ... 18 tools ready",
+        "Intercepting RouteMan requests ... 200 OK",
         "Refactoring core module in Rust...",
         "Zero deps. Single binary. Ship it.",
         "cargo test --all ... 23 passed, 0 failed",
@@ -155,6 +164,7 @@ export const dict = {
         "$ cargo build --release",
         "   Compiling tokenowl v2.1.0",
         "   Compiling hookrun v0.4.0",
+        "   Compiling routeman v0.1.0",
         "   Compiling a7box v1.0.0",
         "    Finished `release` [optimized]",
         "",
@@ -168,6 +178,7 @@ export const dict = {
       mobileSession: [
         "$ cargo build --release",
         "   Compiling tokenowl v2.1.0",
+        "   Compiling routeman v0.1.0",
         "   Compiling a7box v1.0.0",
         "    Finished `release` [optimized]",
       ],
@@ -194,6 +205,11 @@ export const dict = {
         name: "A7Box",
         desc: "A 100% local, cross-platform developer toolbox — 18 built-in tools including screenshot, JSON formatter, QR code, image compression, color picker and more. ~10MB, no cloud.",
         tags: ["Tauri v2", "React 19", "Rust"],
+      },
+      routeman: {
+        name: "RouteMan",
+        desc: "A lightweight desktop HTTP/HTTPS/WebSocket proxy tool — intercept, modify, mock, and route requests with visual rule management. Built for developers.",
+        tags: ["Rust", "Tauri v2", "React 19"],
       },
     },
     stack: {
@@ -241,7 +257,7 @@ export const dict = {
         location: "Shenzhen, China",
         focus: "Developer tools",
         languages: ["Rust", "Go", "TypeScript"],
-        currently: "Iterating HookRun + A7Box + TokenOwl",
+        currently: "Iterating HookRun + A7Box + RouteMan",
       },
     },
     footer: {
