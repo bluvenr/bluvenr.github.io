@@ -74,7 +74,7 @@ export const dict = {
       },
       routeman: {
         name: "RouteMan",
-        desc: "轻量级桌面 HTTP/HTTPS/WebSocket 代理工具——拦截、修改、Mock、路由请求，可视化规则管理，开发者抓包调试利器。",
+        desc: "前端开发者的本地路由管理器——把 Nginx 级路由能力搬到桌面。拦截、Mock、改写任意客户端的 HTTP/HTTPS/WebSocket 流量，可视化规则管理。",
         tags: ["Rust", "Tauri v2", "React 19"],
       },
     },
@@ -208,7 +208,7 @@ export const dict = {
       },
       routeman: {
         name: "RouteMan",
-        desc: "A lightweight desktop HTTP/HTTPS/WebSocket proxy tool — intercept, modify, mock, and route requests with visual rule management. Built for developers.",
+        desc: "A lightweight local route manager for frontend developers — bringing Nginx-level routing to your desktop. Intercept, mock, and rewrite HTTP/HTTPS/WebSocket traffic from any client with visual rules.",
         tags: ["Rust", "Tauri v2", "React 19"],
       },
     },
